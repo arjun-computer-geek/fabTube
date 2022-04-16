@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 :root {
@@ -15,11 +16,10 @@
     --primary-inverse-50: #909090;
 
 }
-/* html {
-    scroll-behavior: smooth;
-  } */
+
 a{
     text-decoration: none;
+    color: var(--primary-inverse);
 }
 button:hover{
 cursor: pointer;

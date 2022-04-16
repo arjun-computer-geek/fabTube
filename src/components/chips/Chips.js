@@ -11,10 +11,10 @@ export const Chips = () => {
     console.info("You clicked the Chip.");
   };
   const leftScroll =() => {
-    chipsContainer.current.scrollLeft += 300;
+    chipsContainer.current.scrollLeft -= 300;
   }
   const rightScroll =() => {
-    chipsContainer.current.scrollLeft -= 300;
+    chipsContainer.current.scrollLeft += 300;
   }
   return (
     <div className="chips-bar">
