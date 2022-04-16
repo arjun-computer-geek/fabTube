@@ -15,6 +15,12 @@
     --primary-inverse-50: #909090;
 
 }
+/* html {
+    scroll-behavior: smooth;
+  } */
 a{
     text-decoration: none;
+}
+button:hover{
+cursor: pointer;
 }
