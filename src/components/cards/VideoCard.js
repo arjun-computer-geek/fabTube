@@ -1,24 +1,30 @@
 import React from "react";
-import { ProfilePic, Thumbnail } from "assets/images";
 import "./videoCard.css";
 import { Link } from "react-router-dom";
-export const VideoCard = () => {
+export const VideoCard = ({
+  thumbnail,
+  ProfilePic,
+  title,
+  chanel,
+  views,
+  createdAt,
+}) => {
   return (
     <div className="video-card">
       <div className="thumbnail">
-        <img src={Thumbnail} alt="thumnail" />
+        <img src={thumbnail} alt="thumnail" />
       </div>
       <div className="bottom">
         <div className="chanel-profile-pic">
           <img src={ProfilePic} alt="chanel-profile" />
         </div>
         <div className="title-wrapper">
-          <h2 className="title">
-          Nazm Nazm - Lyrical | Bareilly Ki Barfi | Kriti Sanon, Ayushmann Khurrana & Rajkummar Rao | Arko
-          </h2>
-          <Link to="#" className="video-card-chanel-name">Chanel Name</Link >
-          <span className="views">45M views. </span>
-          <span className="created-time">1year ago</span>
+          <h2 className="title">{title}</h2>
+          <Link to="#" className="video-card-chanel-name">
+            {chanel}
+          </Link>
+          <span className="views">{views} views. </span>
+          <span className="created-time">{createdAt} ago</span>
         </div>
       </div>
     </div>
