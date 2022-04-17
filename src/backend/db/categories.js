@@ -9,8 +9,18 @@ export const categories = [
   {
     _id: uuid(),
     categoryName: "JavaScript",
-    description:
-      "JavaScript is a dynamic computer programming language.g",
+  },
+  {
+    _id: uuid(),
+    categoryName: "T-Series",
+  },
+  {
+    _id: uuid(),
+    categoryName: "Motivation",
+  },
+  {
+    _id: uuid(),
+    categoryName: "Comedies",
   },
   
 ];
