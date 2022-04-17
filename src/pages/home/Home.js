@@ -1,9 +1,23 @@
-import { Chips, Sidebar } from "components";
+import { Chips, Sidebar, VideoCard } from "components";
 import React from "react";
-import './home.css'
+import "./home.css";
 export const Home = () => {
-  return <main className="home-container">
+  return (
+    <main className="home-container">
       <Sidebar />
-      <Chips />
-  </main>;
+      <div className="home-content">
+        <Chips />
+        <div className="video-card-container">
+          <VideoCard />
+          <VideoCard />
+          <VideoCard />
+          <VideoCard />
+          <VideoCard />
+          <VideoCard />
+          <VideoCard />
+          <VideoCard />
+        </div>
+      </div>
+    </main>
+  );
 };
