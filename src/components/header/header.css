@@ -1,0 +1,64 @@
+.header {
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  background-color: var(--primary);
+  color: var(--primary-inverse);
+  padding: 0 2rem;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  
+}
+.brand {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.brand-logo {
+  height: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 0.5rem;
+}
+.brand-logo img {
+  height: 100%;
+  width: 100%;
+}
+.brand-name{
+  font-size: 1.8rem;
+}
+.search-box {
+  flex-basis: 40%;
+  background-color: var(--primary-inverse-10);
+  height: 60%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 1.5rem;
+}
+.search {
+    font-size: 1rem;
+  width: 90%;
+  height: 100%;
+  background-color: var(--primary-20);
+  color: var(--primary-inverse);
+  padding: 5px;
+  border: 1px solid var(--primary-inverse-20);
+}
+.search:focus{
+    outline: 1px solid;
+}
+.search-logo {
+  width: 10%;
+  height: 100%;
+}
+.profile{
+    flex-basis: 5%;
+    display: inline-flex;
+    justify-content: space-between;
+}

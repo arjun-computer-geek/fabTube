@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+:root {
+    --primary: #212121;
+    --primary-20:#1a1a1a;
+    --primary-50:#111111;
+    --primary-80:#070707;
+    --primary-inverse: #fff;
+    --primary-inverse-10: #373737;
+    --primary-inverse-20: #4d4d4d;
+    --primary-inverse-50: #909090;
+    --primary-inverse-90: #e6e6e6;
+
+}
+
+a{
+    text-decoration: none;
+    color: var(--primary-inverse);
+}
+button:hover{
+cursor: pointer;
+}
