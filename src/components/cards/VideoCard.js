@@ -8,9 +8,10 @@ export const VideoCard = ({
   chanel,
   views,
   createdAt,
+  id,
 }) => {
   return (
-    <div className="video-card">
+    <Link to={`/watch/${id}`} className="video-card">
       <div className="thumbnail">
         <img src={thumbnail} alt="thumnail" />
       </div>
@@ -27,6 +28,6 @@ export const VideoCard = ({
           <span className="created-time">{createdAt} ago</span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };

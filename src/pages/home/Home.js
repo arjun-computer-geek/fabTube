@@ -31,6 +31,7 @@ export const Home = () => {
                   }) => (
                     <VideoCard
                       key={_id}
+                      id={_id}
                       thumbnail={thumbnail}
                       title={title}
                       ProfilePic={chanel_pic}
