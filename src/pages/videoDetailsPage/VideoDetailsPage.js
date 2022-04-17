@@ -6,7 +6,7 @@ import { useVideos } from "contexts/videoContex";
 import { Outlet } from "react-router-dom";
 export const VideoDetailsPage = () => {
   const {
-    videoState: { videos, loading },
+    videoState: { videos },
   } = useVideos();
   return (
     <main className="container video-details-container">

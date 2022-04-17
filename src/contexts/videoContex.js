@@ -1,10 +1,17 @@
-import { createContext, useContext, useEffect, useReducer } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useReducer,
+} from "react";
 import axios from "axios";
 
 import {
   ALL_VIDEOS_FAIL,
   ALL_VIDEOS_REQUEST,
   ALL_VIDEOS_SUCCESS,
+  FILTER_BY_NAME,
+  UPDATE_VIDEOS,
 } from "constants/videoContants";
 import { categoryReducer, videoReducer } from "reducers";
 import {
@@ -20,9 +27,13 @@ const VideoProvider = ({ children }) => {
   const [videoState, videoDispatch] = useReducer(videoReducer, {
     loading: false,
     videos: [],
+    filterByCategory: false,
   });
 
-  const [categoryState, categoryDispatch] = useReducer(categoryReducer);
+  const [categoryState, categoryDispatch] = useReducer(categoryReducer, {
+    loading: false,
+    categories: [],
+  });
 
   //   runnig fetch video on effect
   useEffect(() => {
@@ -66,8 +77,30 @@ const VideoProvider = ({ children }) => {
       });
     }
   };
+
+  const filterByCategoryName = (name) => {
+    let filteredData = videoState.videos;
+    console.log(videoState.filterByCategory)
+    videoDispatch({
+      type: FILTER_BY_NAME,
+      payload: !videoState.filterByCategory,
+    });
+
+    if (videoState.filterByCategory) {
+      filteredData = filteredData.filter(
+        (video) => video.categoryName === name
+      );
+    }
+
+    videoDispatch({
+      type: UPDATE_VIDEOS,
+      payload: filteredData,
+    });
+  };
   return (
-    <videoContext.Provider value={{ videoState, categoryState }}>
+    <videoContext.Provider
+      value={{ videoState, categoryState, filterByCategoryName }}
+    >
       {children}
     </videoContext.Provider>
   );

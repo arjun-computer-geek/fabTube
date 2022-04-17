@@ -3,46 +3,41 @@ import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 import React, { useRef } from "react";
 
-import './chips.css'
+import "./chips.css";
+import { useVideos } from "contexts/videoContex";
 
 export const Chips = () => {
-  const chipsContainer = useRef(null)
-  const handleClick = () => {
-    console.info("You clicked the Chip.");
-  };
-  const leftScroll =() => {
+  const chipsContainer = useRef(null);
+  const {
+    categoryState: { categories },
+    filterByCategoryName
+  } = useVideos();
+
+ 
+  const leftScroll = () => {
     chipsContainer.current.scrollLeft -= 300;
-  }
-  const rightScroll =() => {
+  };
+  const rightScroll = () => {
     chipsContainer.current.scrollLeft += 300;
-  }
+  };
   return (
     <div className="chips-bar">
-    <button className="left-arrow" onClick={leftScroll}><ArrowBackIosIcon/></button>
-    <Stack ref={chipsContainer} className="chips-container" direction="row" spacing={1}>
-        
-      <Chip className="chips" label="Clickable" onClick={handleClick} />
-      <Chip className="chips" label="Clickable" onClick={handleClick} />
-      <Chip className="chips" label="Clickable" onClick={handleClick} />
-      <Chip className="chips" label="Clickable" onClick={handleClick} />
-      <Chip className="chips" label="Clickable" onClick={handleClick} />
-      <Chip className="chips" label="Clickable" onClick={handleClick} />
-      <Chip className="chips" label="Clickable" onClick={handleClick} />
-      <Chip className="chips" label="Clickable" onClick={handleClick} />
-      <Chip className="chips" label="Clickable" onClick={handleClick} />
-      <Chip className="chips" label="Clickable" onClick={handleClick} />
-      <Chip className="chips" label="Clickable" onClick={handleClick} />
-      <Chip className="chips" label="Clickable" onClick={handleClick} />
-      <Chip className="chips" label="Clickable" onClick={handleClick} />
-      <Chip className="chips" label="Clickable" onClick={handleClick} />
-      <Chip className="chips" label="Clickable" onClick={handleClick} />
-      <Chip className="chips" label="Clickable" onClick={handleClick} />
-      <Chip className="chips" label="Clickable" onClick={handleClick} />
-      <Chip className="chips" label="Clickable" onClick={handleClick} />
-      <Chip className="chips" label="Clickable" onClick={handleClick} />
-      
-    </Stack>
-      <button className="right-arrow" onClick={rightScroll}><ArrowForwardIosIcon/></button>
+      <button className="left-arrow" onClick={leftScroll}>
+        <ArrowBackIosIcon />
+      </button>
+      <Stack
+        ref={chipsContainer}
+        className="chips-container"
+        direction="row"
+        spacing={1}
+      >
+        {categories.map((category) => (
+          <Chip key={category._id} className="chips" label={category.categoryName} onClick={() => filterByCategoryName(category.categoryName)} />
+        ))}
+      </Stack>
+      <button className="right-arrow" onClick={rightScroll}>
+        <ArrowForwardIosIcon />
+      </button>
     </div>
   );
 };
