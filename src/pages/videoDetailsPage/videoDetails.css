@@ -1,0 +1,15 @@
+.video-details-container {
+  padding: 1.5rem;
+  display: fex;
+  flex-wrap: wrap;
+}
+.video-details-right-pane {
+  width: 32%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+.video-details-left-pane {
+  width: 68%;
+}

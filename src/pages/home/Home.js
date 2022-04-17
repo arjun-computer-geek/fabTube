@@ -9,7 +9,7 @@ export const Home = () => {
 
   return (
     <>
-      <main className="home-container">
+      <main className="container">
         <Sidebar />
 
         <div className="home-content">
