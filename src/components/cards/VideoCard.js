@@ -13,7 +13,7 @@ export const VideoCard = ({
   return (
     <Link to={`/watch/${id}`} className="video-card">
       <div className="thumbnail">
-        <img src={thumbnail} alt="thumnail" />
+        <img src={thumbnail} alt="thumbnail" />
       </div>
       <div className="bottom">
         <div className="chanel-profile-pic">
