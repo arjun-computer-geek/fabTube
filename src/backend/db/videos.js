@@ -2,7 +2,7 @@
  * Videos Database can be added here.
  * You can add videos of your wish with different attributes
  * */
-import { ch1, id1, id2, id3, id4 } from "images";
+import { ch1, ch2, id1, id2, id3, id4 } from "assets/images";
 import { v4 as uuid } from "uuid";
 export const videos = [
   {
@@ -57,8 +57,7 @@ export const videos = [
   {
     _id: uuid(),
     thumbnail: id4,
-    title:
-      "I Bet You Can’t Even Name 10",
+    title: "I Bet You Can’t Even Name 10",
     description: `You have probably written console.log thousands of times, but you probably almost never use any of the 20+ amazing console methods available. In this video I cover every single console method and when you should use each. I also cover individual tips and tricks for console.log that you probably didn’t know about.`,
     creator: "Web Dev Simplified",
     views: "10,005",
