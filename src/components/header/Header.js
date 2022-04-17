@@ -1,6 +1,7 @@
 import { HeaderLogo} from "assets/images";
 import { AccountCircleSharpIcon, NotificationsNoneOutlinedIcon, SearchIcon, Menu } from "assets/muiIcons";
 import React from "react";
+import { Link } from "react-router-dom";
 import "./header.css";
 
 export const Header = () => {
@@ -8,10 +9,10 @@ export const Header = () => {
     <header className="header">
       <div className="brand">
         <Menu />
-        <div className="brand-logo">
+        <Link to="/" className="brand-logo">
           <img src={HeaderLogo} alt="logo" />
-        </div>
-        <h1 className="brand-name">FabTube</h1>
+        </Link>
+        <Link to="/" ><h1 className="brand-name">FabTube</h1></Link>
       </div>
 
       <div className="search-box">

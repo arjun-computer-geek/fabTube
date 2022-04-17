@@ -9,7 +9,7 @@ export const Home = () => {
 
   return (
     <>
-      <main className="home-container">
+      <main className="container">
         <Sidebar />
 
         <div className="home-content">
@@ -31,6 +31,7 @@ export const Home = () => {
                   }) => (
                     <VideoCard
                       key={_id}
+                      id={_id}
                       thumbnail={thumbnail}
                       title={title}
                       ProfilePic={chanel_pic}

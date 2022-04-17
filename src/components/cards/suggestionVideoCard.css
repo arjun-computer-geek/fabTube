@@ -1,0 +1,48 @@
+/* style for card container */
+.suggestion-video-card {
+    height: 5rem;
+    width: 100%;
+    display: flex;
+  }
+  
+  /* card thumbnail image */
+  .suggestion-video-card .thumbnail {
+    width: 30%;
+    height: 100%;
+  }
+  .suggestion-video-card .thumbnail img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  
+  .suggestion-video-card .title-wrapper {
+    width: 69%;
+    height: 100%;
+    padding: 0.2rem 0.5rem;
+  }
+  .suggestion-video-card .title {
+    color: var(--primary-inverse);
+    font-size: 0.8rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  
+  .suggestion-video-card .video-card-chanel-name {
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--primary-inverse-90);
+    font-size: 0.7rem;
+  }
+  .suggestion-video-card .views {
+    color: var(--primary-inverse-90);
+    font-size: 0.7rem;
+  }
+  .suggestion-video-card .created-time {
+    color: var(--primary-inverse-90);
+    font-size: 0.7rem;
+  }
+  

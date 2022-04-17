@@ -8,11 +8,12 @@ export const VideoCard = ({
   chanel,
   views,
   createdAt,
+  id,
 }) => {
   return (
-    <div className="video-card">
+    <Link to={`/watch/${id}`} className="video-card">
       <div className="thumbnail">
-        <img src={thumbnail} alt="thumnail" />
+        <img src={thumbnail} alt="thumbnail" />
       </div>
       <div className="bottom">
         <div className="chanel-profile-pic">
@@ -24,9 +25,9 @@ export const VideoCard = ({
             {chanel}
           </Link>
           <span className="views">{views} views. </span>
-          <span className="created-time">{createdAt} ago</span>
+          <span className="created-time">{createdAt} </span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
