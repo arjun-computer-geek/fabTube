@@ -1,13 +1,13 @@
 import { useVideos } from "contexts/videoContex";
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export const Player = () => {
-    const {videoId} = useParams()
-    const {
-        videoState: { videos, loading },
-      } = useVideos();
-    const isVideoExist = videos.find(ele => ele._id === videoId)
+  const { videoId } = useParams();
+  const {
+    videoState: { videos, loading },
+  } = useVideos();
+  const isVideoExist = videos.find((ele) => ele._id === videoId);
   return (
     <>
       <iframe
@@ -19,6 +19,22 @@ export const Player = () => {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullscreen
       ></iframe>
+      <h2 className="video-details-title">{isVideoExist.title}</h2>
+      <div className="player-likes-row">
+        <span className="views">{isVideoExist.views} views. </span>
+        <span className="created-time">{isVideoExist.createdAt} </span>
+      </div>
+      <div className="bottom player-bottom">
+        <div className="chanel-profile-pic">
+          <img src={isVideoExist.chanel_pic} alt="chanel-profile" />
+        </div>
+        <div className="title-wrapper">
+          <Link to="#" className="video-player-card-chanel-name">
+            {isVideoExist.creator}
+          </Link>
+          <p>{isVideoExist.description} </p>
+        </div>
+      </div>
     </>
   );
 };

@@ -4,14 +4,14 @@ import "./suggestionVideoCard.css";
 
 export const SuggestionVideoCard = ({
   thumbnail,
-  ProfilePic,
   title,
   chanel,
   views,
   createdAt,
+  id
 }) => {
   return (
-    <div className="suggestion-video-card">
+    <Link to={`/watch/${id}`} className="suggestion-video-card">
       <div className="thumbnail">
         <img src={thumbnail} alt="thumnail" />
       </div>
@@ -23,6 +23,6 @@ export const SuggestionVideoCard = ({
         <span className="views">{views} views. </span>
         <span className="created-time">{createdAt} ago</span>
       </div>
-    </div>
+    </Link>
   );
 };

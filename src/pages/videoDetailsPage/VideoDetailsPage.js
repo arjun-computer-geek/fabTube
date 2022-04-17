@@ -12,7 +12,6 @@ export const VideoDetailsPage = () => {
     <main className="container video-details-container">
       <div className="video-details-left-pane">
         <Outlet />
-        <h2>Asynchronous JavaScript & EVENT LOOP from scratch 🔥 | Namaste JavaScript Ep.15</h2>
       </div>
       <div className="video-details-right-pane">
         <Stack className="chips-container" direction="row" spacing={1}>
@@ -34,6 +33,7 @@ export const VideoDetailsPage = () => {
           }) => (
             <SuggestionVideoCard
               key={_id}
+              id={_id}
               thumbnail={thumbnail}
               title={title}
               ProfilePic={chanel_pic}

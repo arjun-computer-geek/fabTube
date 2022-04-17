@@ -25,7 +25,7 @@ export const VideoCard = ({
             {chanel}
           </Link>
           <span className="views">{views} views. </span>
-          <span className="created-time">{createdAt} ago</span>
+          <span className="created-time">{createdAt} </span>
         </div>
       </div>
     </Link>
