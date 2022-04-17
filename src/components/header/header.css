@@ -1,4 +1,8 @@
 .header {
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 2;
   background-color: var(--primary);
   color: var(--primary-inverse);
   padding: 0 2rem;
@@ -7,6 +11,7 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  
 }
 .brand {
   height: 100%;
@@ -23,6 +28,9 @@
 .brand-logo img {
   height: 100%;
   width: 100%;
+}
+.brand-name{
+  font-size: 1.8rem;
 }
 .search-box {
   flex-basis: 40%;

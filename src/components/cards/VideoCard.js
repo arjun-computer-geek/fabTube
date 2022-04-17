@@ -1,5 +1,5 @@
 import React from "react";
-import { ProfilePic, Thumbnail } from "images";
+import { ProfilePic, Thumbnail } from "assets/images";
 import "./videoCard.css";
 import { Link } from "react-router-dom";
 export const VideoCard = () => {

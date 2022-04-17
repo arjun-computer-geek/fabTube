@@ -1,8 +1,8 @@
-import React, { useRef } from "react";
+import { ArrowBackIosIcon, ArrowForwardIosIcon } from "assets/muiIcons";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import React, { useRef } from "react";
+
 import './chips.css'
 
 export const Chips = () => {

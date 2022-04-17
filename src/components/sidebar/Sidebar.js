@@ -1,11 +1,7 @@
+import { ExploreIcon, HistoryIcon, HomeIcon, LikeIcon, VideoLibraryIcon, WatchLaterIcon } from "assets/muiIcons";
 import React from "react";
 import { Link } from "react-router-dom";
-import HomeIcon from "@mui/icons-material/Home";
-import ExploreIcon from "@mui/icons-material/Explore";
-import VideoLibraryIcon from "@mui/icons-material/VideoLibrary";
-import HistoryIcon from "@mui/icons-material/History";
-import WatchLaterIcon from "@mui/icons-material/WatchLaterOutlined";
-import LikeIcon from "@mui/icons-material/ThumbUpAltOutlined";
+
 import "./sidebar.css";
 
 export const Sidebar = () => {
