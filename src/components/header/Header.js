@@ -1,8 +1,5 @@
-import { Menu } from "@mui/icons-material";
-import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
-import AccountCircleSharpIcon from "@mui/icons-material/AccountCircleSharp";
-import SearchIcon from "@mui/icons-material/Search";
-import { HeaderLogo } from "images";
+import { HeaderLogo} from "assets/images";
+import { AccountCircleSharpIcon, NotificationsNoneOutlinedIcon, SearchIcon, Menu } from "assets/muiIcons";
 import React from "react";
 import "./header.css";
 
