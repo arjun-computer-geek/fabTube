@@ -1,4 +1,4 @@
-import { HeaderLogo} from "assets/images";
+import { HeaderLogo } from "assets/images";
 import { AccountCircleSharpIcon, NotificationsNoneOutlinedIcon, SearchIcon, Menu } from "assets/muiIcons";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -21,7 +21,9 @@ export const Header = () => {
       </div>
       <div className="profile">
         <NotificationsNoneOutlinedIcon />
-        <AccountCircleSharpIcon />
+        <Link to="/login">
+          <AccountCircleSharpIcon />
+        </Link>
       </div>
     </header>
   );

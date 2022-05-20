@@ -10,7 +10,7 @@ export const VideoCard = ({
   createdAt,
   id,
 }) => {
-  return (
+  return (<>
     <Link to={`/watch/${id}`} className="video-card">
       <div className="thumbnail">
         <img src={thumbnail} alt="thumbnail" />
@@ -29,5 +29,6 @@ export const VideoCard = ({
         </div>
       </div>
     </Link>
+    </>
   );
 };
