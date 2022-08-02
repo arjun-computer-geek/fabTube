@@ -19,9 +19,9 @@ const UserProvider = ({ children }) => {
 
   
   return (
-    <videoContext.Provider value={{ userState }}>
+    <userContext.Provider value={{ userState }}>
       {children}
-    </videoContext.Provider>
+    </userContext.Provider>
   );
 };
 export { useUser, UserProvider };
