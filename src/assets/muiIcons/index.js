@@ -9,6 +9,7 @@ import VideoLibraryIcon from "@mui/icons-material/VideoLibrary";
 import HistoryIcon from "@mui/icons-material/History";
 import WatchLaterIcon from "@mui/icons-material/WatchLaterOutlined";
 import LikeIcon from "@mui/icons-material/ThumbUpAltOutlined";
+import LoginIcon from '@mui/icons-material/Login';
 
 export { Menu } from "@mui/icons-material";
 export {
@@ -22,5 +23,6 @@ export {
     VideoLibraryIcon,
     HistoryIcon,
     WatchLaterIcon,
-    LikeIcon
+    LikeIcon,
+    LoginIcon
 };
