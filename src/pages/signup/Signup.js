@@ -49,15 +49,28 @@ export const Signup = () => {
 
     }, [isAuthenticated, error])
 
+    const validateData = (data) => {
+        if (data.firstName !== "" && data.lastName !== "" && data.email !== "") {
+            return true
+        }
+        else {
+            return false
+        }
+    }
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        register({
+        const userData = {
             email: data.get('email'),
             password: data.get('password'),
             firstName: data.get('firstName'),
             lastName: data.get('lastName')
-        });
+        }
+        if (validateData(userData)) {
+            register(userData);
+        } else {
+            toast.error("Field can't be empty")
+        }
     };
 
     return (

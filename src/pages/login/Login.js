@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { toast } from "react-toastify";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {
@@ -34,8 +34,10 @@ function Copyright(props) {
 const theme = createTheme();
 
 export const Login = () => {
-  const { login, userState: { isAuthenticated, error }, clearError } = useUser()
+
+  const [isChecked, setIsChecked] = useState(false)
   const navigate = useNavigate()
+  const { login, userState: { isAuthenticated, error }, clearError } = useUser()
 
   useEffect(() => {
 
@@ -50,20 +52,39 @@ export const Login = () => {
 
   }, [isAuthenticated, error])
 
+  const validateData = (data) => {
+    if (data.password !== "" && data.email !== "") {
+      return true
+    }
+    else {
+      return false
+    }
+  }
+  const remembermeHandler = (e) => {
+    setIsChecked(e.target.checked)
+  }
   const handleSubmit = (event) => {
     event.preventDefault();
+
     const data = new FormData(event.currentTarget);
-    login({
+
+    const userData = {
       email: data.get('email'),
       password: data.get('password')
-    });
+    }
+    if (validateData(userData, isChecked )) {
+      login(userData);
+    }
+    else {
+      toast.error("Field can't be empty")
+    }
   };
   const tesingLoginHandler = (event) => {
     event.preventDefault();
     login({
       email: "admina@gmail.com",
       password: "password"
-    });
+    }, true);
   }
 
   return (
@@ -106,7 +127,7 @@ export const Login = () => {
               autoComplete="current-password"
             />
             <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
+              control={<Checkbox value="remember" color="primary" checked={isChecked} onClick={remembermeHandler} />}
               label="Remember me"
             />
             <Button
