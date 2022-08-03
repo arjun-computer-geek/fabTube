@@ -1,12 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { toast } from "react-toastify";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {
     Avatar,
     Button,
     CssBaseline,
     TextField,
-    FormControlLabel,
-    Checkbox,
     Link,
     Grid,
     Box,
@@ -14,6 +13,8 @@ import {
     Container
 } from 'components/muiComponents'
 import { LockOutlinedIcon } from "assets/muiIcons";
+import { useUser } from 'contexts/userContext';
+import { useNavigate } from 'react-router-dom';
 
 function Copyright(props) {
     return (
@@ -32,12 +33,30 @@ function Copyright(props) {
 const theme = createTheme();
 
 export const Signup = () => {
+    const { register, userState: { isAuthenticated, error }, clearError } = useUser()
+    const navigate = useNavigate()
+
+    useEffect(() => {
+
+        if (isAuthenticated) {
+            navigate('/')
+        }
+
+        if (error) {
+            toast.error(error)
+            clearError()
+        }
+
+    }, [isAuthenticated, error])
+
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        console.log({
+        register({
             email: data.get('email'),
             password: data.get('password'),
+            firstName: data.get('firstName'),
+            lastName: data.get('lastName')
         });
     };
 

@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 import "./header.css";
 
 export const Header = () => {
-  const { userState: { user } , userState} = useUser()
-console.log(userState)
+  const { userState: { user }, userState } = useUser()
+  console.log(userState)
   return (
     <header className="header">
       <div className="brand">
@@ -25,7 +25,9 @@ console.log(userState)
       <div className="profile">
         <NotificationsNoneOutlinedIcon />
         {user ?
-          <AccountCircleSharpIcon />
+          <Link to='/profile'>
+            <AccountCircleSharpIcon />
+          </Link>
           :
           <Link to='/login'>
             <LoginIcon />

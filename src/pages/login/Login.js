@@ -34,21 +34,21 @@ function Copyright(props) {
 const theme = createTheme();
 
 export const Login = () => {
-  const { login, userState:{isAuthenticated, error}, clearError} = useUser()
+  const { login, userState: { isAuthenticated, error }, clearError } = useUser()
   const navigate = useNavigate()
 
   useEffect(() => {
 
-    if(isAuthenticated){
-        navigate('/')
+    if (isAuthenticated) {
+      navigate('/')
     }
 
-    if(error){
-        toast.error(error)
-        clearError()
+    if (error) {
+      toast.error(error)
+      clearError()
     }
 
-}, [ isAuthenticated, error])
+  }, [isAuthenticated, error])
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -58,7 +58,7 @@ export const Login = () => {
       password: data.get('password')
     });
   };
-  const tesingLoginHandler =(event) => {
+  const tesingLoginHandler = (event) => {
     event.preventDefault();
     login({
       email: "admina@gmail.com",
