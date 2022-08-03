@@ -1,13 +1,13 @@
-import { HeaderLogo} from "assets/images";
-import { AccountCircleSharpIcon, NotificationsNoneOutlinedIcon, SearchIcon, Menu,LoginIcon } from "assets/muiIcons";
+import { HeaderLogo } from "assets/images";
+import { AccountCircleSharpIcon, NotificationsNoneOutlinedIcon, SearchIcon, Menu, LoginIcon } from "assets/muiIcons";
 import { useUser } from "contexts/userContext";
 import React from "react";
 import { Link } from "react-router-dom";
 import "./header.css";
 
 export const Header = () => {
-  const {userState:{user}} = useUser()
-  console.log(user)
+  const { userState: { user } , userState} = useUser()
+console.log(userState)
   return (
     <header className="header">
       <div className="brand">
@@ -24,8 +24,13 @@ export const Header = () => {
       </div>
       <div className="profile">
         <NotificationsNoneOutlinedIcon />
-        {user?<AccountCircleSharpIcon />: <LoginIcon />}
-        
+        {user ?
+          <AccountCircleSharpIcon />
+          :
+          <Link to='/login'>
+            <LoginIcon />
+          </Link>}
+
       </div>
     </header>
   );
