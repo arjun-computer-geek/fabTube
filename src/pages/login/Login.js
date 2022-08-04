@@ -72,8 +72,8 @@ export const Login = () => {
       email: data.get('email'),
       password: data.get('password')
     }
-    if (validateData(userData, isChecked )) {
-      login(userData);
+    if (validateData(userData)) {
+      login(userData, isChecked);
     }
     else {
       toast.error("Field can't be empty")
