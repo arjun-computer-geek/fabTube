@@ -21,9 +21,9 @@ export const VideoCard = ({
         </div>
         <div className="title-wrapper">
           <h2 className="title">{title}</h2>
-          <Link to="#" className="video-card-chanel-name">
+          <div className="video-card-chanel-name">
             {chanel}
-          </Link>
+          </div>
           <span className="views">{views} views. </span>
           <span className="created-time">{createdAt} </span>
         </div>
