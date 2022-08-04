@@ -29,7 +29,7 @@ const UserProvider = ({ children }) => {
       const { data } = await axios.post("/api/auth/login", userData)
 
       userDispatch({ type: LOGIN_SUCCESS, payload: data.foundUser })
-
+      console.log(isChecked)
       if (isChecked) {
         localStorage.setItem("user", JSON.stringify({ _id: data.foundUser._id, firstName: data.foundUser.firstName, lastName: data.foundUser.lastName, email: data.foundUser.email }))
         localStorage.setItem('token', JSON.stringify(data.encodedToken))
