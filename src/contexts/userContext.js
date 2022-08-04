@@ -49,7 +49,7 @@ const UserProvider = ({ children }) => {
       localStorage.setItem('token', JSON.stringify(data.encodedToken))
 
     } catch (error) {
-      // userDispatch({type: LOGIN_FAIL, payload: error.response.data.errors[0]})
+      userDispatch({type: LOGIN_FAIL, payload: error.response.data.errors[0]})
       console.log(error.response.data)
     }
   }
