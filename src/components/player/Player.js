@@ -5,7 +5,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 export const Player = () => {
   const { videoId } = useParams();
   const {
-    videoState: { videos, loading },
+    videoState: { videos},
   } = useVideos();
   const isVideoExist = videos.find((ele) => ele._id === videoId);
   const navigate = useNavigate()
