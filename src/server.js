@@ -18,6 +18,7 @@ import { categories } from "./backend/db/categories";
 import {
   getAllCategoriesHandler,
   getCategoryHandler,
+  getCategoriesVideoHandler,
 } from "./backend/controllers/CategoryController";
 import {
   getLikedVideosHandler,
@@ -88,6 +89,7 @@ export function makeServer({ environment = "development" } = {}) {
       // categories routes (public)
       this.get("/categories", getAllCategoriesHandler.bind(this));
       this.get("/categories/:categoryId", getCategoryHandler.bind(this));
+      this.get("/categories/:categoryName", getCategoriesVideoHandler.bind(this));
 
       // likes routes (private)
       this.get("/user/likes", getLikedVideosHandler.bind(this));

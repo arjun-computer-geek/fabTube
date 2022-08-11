@@ -59,6 +59,15 @@ const VideoProvider = ({ children }) => {
       });
     }
   };
+  
+  const fetchCategoriesVideo = async () => {
+    try{
+      const response = await axios('/api/categories/Trending')
+      console.log(response)
+    }catch(err){
+      console.log(err.response.data.error)
+    }
+  }
 
   const fetchVideos = async () => {
     try {
@@ -99,7 +108,7 @@ const VideoProvider = ({ children }) => {
   };
   return (
     <videoContext.Provider
-      value={{ videoState, categoryState, filterByCategoryName }}
+      value={{ videoState, categoryState, filterByCategoryName, fetchCategoriesVideo }}
     >
       {children}
     </videoContext.Provider>

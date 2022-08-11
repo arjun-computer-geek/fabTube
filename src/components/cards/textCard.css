@@ -1,4 +1,4 @@
-.text-card{
+.text-card {
     background-color: var(--primary);
     border-radius: 5px;
     width: 13.2rem;
@@ -6,18 +6,24 @@
     color: var(--primary-inverse);
     font-weight: 600;
     padding: 1rem;
-
 }
-.text-card-img-container{
+
+.text-card:hover {
+    background-color: var(--primary-inverse-10)
+}
+
+.text-card-img-container {
     width: 2rem;
     height: 2rem;
     margin-top: 1rem;
 }
-.text-card-img-container img{
+
+.text-card-img-container img {
     width: 100%;
     height: 100%;
 }
-.text-card-text{
+
+.text-card-text {
     display: block;
     margin-top: 0.5rem;
 }
