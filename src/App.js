@@ -3,7 +3,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Header, Player, ProtectedRoute } from "components";
-import { Home, Login, Profile, Signup, VideoDetailsPage } from "pages";
+import { Explore, Home, Login, Profile, Signup, VideoDetailsPage } from "pages";
 
 const App = () => {
   return (<>
@@ -23,6 +23,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/explore" element={<Explore />} />
         <Route element={<ProtectedRoute />} >
           <Route path="/profile" element={<Profile />} />
         </Route>

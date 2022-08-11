@@ -1,3 +1,4 @@
+export { TextCard } from "./cards/TextCard";
 export { ProtectedRoute } from "./route/ProtectedRoute";
 export { Player } from "./player/Player";
 export { SuggestionVideoCard } from "./cards/SuggestionVideoCard";
