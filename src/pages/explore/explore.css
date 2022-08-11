@@ -4,3 +4,12 @@
     flex-wrap: wrap;
     gap: 5px;
 }
+.explore-videos-container{
+    margin-top: 1rem;
+    border-top: 1px solid var( --primary-inverse-20);
+    padding-top: 1rem;
+}
+.explore-videos-container h3{
+    color: var(--primary-inverse);
+    margin-left: 1rem;
+}
