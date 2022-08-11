@@ -1,3 +1,4 @@
+export { History } from './history/History'
 export { ExploreDetails } from './explore/ExploreDetails'
 export { Feed } from './feed/Feed'
 export { Explore } from './explore/Explore'
