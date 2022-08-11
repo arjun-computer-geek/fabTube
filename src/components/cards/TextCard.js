@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import './textCard.css'
 export const TextCard = ({ text, img }) => {
     return (
-        <Link className='text-card' to={`/${text}`}>
+        <Link className='text-card' to={`/feed/${text}`}>
             {img && <div className='text-card-img-container'>
                 <img src={img} alt="card-img" />
             </div>}

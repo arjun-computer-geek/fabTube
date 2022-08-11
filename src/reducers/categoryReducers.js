@@ -36,7 +36,6 @@ import {
             categoriesVideos: [],
           };
         case CATEGORIES_VIDEOS_SUCCESS:
-          console.log(action.payload)
           return {
             ...state,
             loading: false,

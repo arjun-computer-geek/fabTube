@@ -12,7 +12,7 @@ export const Sidebar = () => {
           <HomeIcon className="sidebar-bar-icon" />
           <span className="sidebar-bar-caption">Home</span>
         </Link>
-        <Link className="sidebar-bar" to="/explore">
+        <Link className="sidebar-bar" to="/feed/explore">
           <ExploreIcon className="sidebar-bar-icon" />
           <span className="sidebar-bar-caption">Explore</span>
         </Link>

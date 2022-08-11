@@ -1,23 +1,27 @@
+import { SuggestionVideoCardExplore } from 'components'
+import { useVideos } from 'contexts/videoContex'
 import React, { useEffect } from 'react'
-import { TextCard,  SuggestionVideoCardExplore } from "components";
 import './explore.css'
-import { useVideos } from 'contexts/videoContex';
 
-export const Explore = () => {
+export const ExploreDetails = ({ category }) => {
     const { categoryState: { categories, categoriesVideos }, fetchCategoriesVideo } = useVideos()
+    const isCategoryExist = categories.find(item => item.categoryName === category)
 
     useEffect(() => {
-        fetchCategoriesVideo("Trending")
+        fetchCategoriesVideo(isCategoryExist?.categoryName)
     }, [])
+
     return (
         <>
-
-            <div className='explore-category'>
-                {categories?.slice(0, 8)?.map(category => <TextCard key={category._id} text={category.categoryName} img={category.img} />)}
+            <div className='explore-details-header'>
+                {isCategoryExist?.img && <div className='explore-details-img-container'>
+                    <img src={isCategoryExist?.img} alt="card-img" />
+                </div>}
+                <h2>{isCategoryExist?.categoryName}</h2>
             </div>
 
             <div className='explore-videos-container'>
-                <h3>Trending Videos</h3>
+                <h3>{isCategoryExist?.categoryName}</h3>
                 {
                     categoriesVideos?.map(({
                         _id,
@@ -41,8 +45,6 @@ export const Explore = () => {
                     ))
                 }
             </div>
-
-
         </>
     )
 }
