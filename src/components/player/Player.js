@@ -1,3 +1,5 @@
+import { useHistory } from "contexts/historyContex";
+import { useUser } from "contexts/userContext";
 import { useVideos } from "contexts/videoContex";
 import React, { useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
@@ -5,16 +7,22 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 export const Player = () => {
   const { videoId } = useParams();
   const {
-    videoState: { videos},
+    videoState: { videos },
   } = useVideos();
+  const {addVideoToHistory} = useHistory()
   const isVideoExist = videos.find((ele) => ele._id === videoId);
   const navigate = useNavigate()
-  useEffect(()=>{
-    if(!isVideoExist){
+  const {userState: {user, token} } = useUser()
+  useEffect(() => {
+    if (!isVideoExist) {
       navigate('/')
     }
-  },[isVideoExist])
+  }, [isVideoExist])
 
+  useEffect(() => {
+    if(user)
+    addVideoToHistory(isVideoExist, token)
+  },[])
 
   return (
     <>
