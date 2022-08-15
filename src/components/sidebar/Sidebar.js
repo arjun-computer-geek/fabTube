@@ -30,7 +30,7 @@ export const Sidebar = () => {
           <WatchLaterIcon className="sidebar-bar-icon" />
           <span className="sidebar-bar-caption">Watch later</span>
         </Link>
-        <Link className="sidebar-bar" to="#">
+        <Link className="sidebar-bar" to="/feed/liked">
           <LikeIcon className="sidebar-bar-icon" />
           <span className="sidebar-bar-caption">Liked videos</span>
         </Link>

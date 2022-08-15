@@ -22,10 +22,15 @@
   border-bottom: 1px solid var(--primary-inverse-20);
   padding: 1rem 0;
   margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
 }
 .player-likes-row span{
   font-size: 0.8rem;
 color: var(--primary-inverse-50);
+}
+.like-icon-btns{
+  margin-right: 2rem;
 }
 .video-player-card-chanel-name{
   font: 3rem;

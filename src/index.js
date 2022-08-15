@@ -6,6 +6,7 @@ import "./index.css";
 import { VideoProvider } from "contexts/videoContex";
 import { UserProvider } from "contexts/userContext";
 import { HistoryProvider } from "contexts/historyContex";
+import { LikeProvider } from "contexts/LikeContext";
 
 // Call make Server
 makeServer();
@@ -15,9 +16,11 @@ root.render(
   <React.StrictMode>
     <UserProvider>
       <VideoProvider>
-        <HistoryProvider>
-          <App />
-        </HistoryProvider>
+        <LikeProvider>
+          <HistoryProvider>
+            <App />
+          </HistoryProvider>
+        </LikeProvider>
       </VideoProvider>
     </UserProvider>
   </React.StrictMode>
