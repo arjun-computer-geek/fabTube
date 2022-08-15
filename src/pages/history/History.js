@@ -7,7 +7,7 @@ import './history.css'
 import { useUser } from 'contexts/userContext'
 
 export const History = () => {
-    const { historyState: { historyVideos }, deleteHistory } = useHistory()
+    const { historyState: { historyVideos }, deleteHistory, clearAllHistory } = useHistory()
     const { userState: { user, token } } = useUser()
     return (<>
 
@@ -27,7 +27,7 @@ export const History = () => {
 
                 <div className='history-header'>
                     <h2>History ({historyVideos.length})</h2>
-                    <Button variant="contained" className='clear-btn'>Clear History</Button>
+                    <Button variant="contained" className='clear-btn' onClick={() => clearAllHistory(token)}>Clear History</Button>
                 </div>
                 <div className='history-video-container'>
                     {historyVideos?.map(video => <SuggestionVideoCardExplore type="dismiss" handler={deleteHistory} token={token}
