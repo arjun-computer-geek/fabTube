@@ -7,7 +7,6 @@ import "./header.css";
 
 export const Header = () => {
   const { userState: { user }, userState } = useUser()
-  console.log(userState)
   return (
     <header className="header">
       <div className="brand">

@@ -1,6 +1,16 @@
 import HeaderLogo from "./logo.png";
 import ProfilePic from "./profile.jpg";
 import Thumbnail from "./hq720.webp";
+import FashionImg from "./fashion.png";
+import GamingImg from "./gaming.png";
+import LearningImg from "./learning.png";
+import MoviesImg from "./movies.png";
+import MusicImg from "./music.png";
+import NewsImg from "./news.png";
+import SportsImg from "./sports.png";
+import TrendingImg from "./trending.png";
+
+
 import id1 from "./id1.webp";
 import id2 from "./id2.webp";
 import id3 from "./id3.webp";
@@ -34,6 +44,14 @@ export {
   HeaderLogo,
   ProfilePic,
   Thumbnail,
+  FashionImg,
+  GamingImg,
+  LearningImg,
+  MoviesImg,
+  MusicImg,
+  NewsImg,
+  SportsImg,
+  TrendingImg,
   id1,
   id2,
   id3,

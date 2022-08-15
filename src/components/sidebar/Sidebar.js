@@ -8,11 +8,11 @@ export const Sidebar = () => {
   return (
     <aside className="sidebar">
       <div className="sidebar-section">
-        <Link className="sidebar-bar" to="#">
+        <Link className="sidebar-bar" to="/">
           <HomeIcon className="sidebar-bar-icon" />
           <span className="sidebar-bar-caption">Home</span>
         </Link>
-        <Link className="sidebar-bar" to="#">
+        <Link className="sidebar-bar" to="/feed/explore">
           <ExploreIcon className="sidebar-bar-icon" />
           <span className="sidebar-bar-caption">Explore</span>
         </Link>

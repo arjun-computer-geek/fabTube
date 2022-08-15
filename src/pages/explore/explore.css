@@ -1,0 +1,37 @@
+.explore-category{
+    padding: 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.explore-videos-container{
+    margin-top: 1rem;
+    border-top: 1px solid var( --primary-inverse-20);
+    padding-top: 1rem;
+}
+.explore-videos-container h3{
+    color: var(--primary-inverse);
+    margin-left: 1rem;
+}
+
+/* explore details */
+.explore-details-header{
+    padding: 1rem;
+    padding-bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: baseline;
+    align-items: center;
+}
+.explore-details-img-container{
+    height: 5rem;
+    width: 5rem;
+}
+.explore-details-img-container img{
+    height: 100%;
+    width: 100%;
+}
+.explore-details-header h2{
+    font-size: 1.8rem;
+    color: var(--primary-inverse);
+}

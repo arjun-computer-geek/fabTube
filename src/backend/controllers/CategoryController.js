@@ -25,7 +25,7 @@ export const getAllCategoriesHandler = function () {
 
 /**
  * This handler handles gets all categories in the db.
- * send GET Request at /api/user/category/:categoryId
+ * send GET Request at /api/category/:categoryId
  * */
 
 export const getCategoryHandler = function (schema, request) {
@@ -33,6 +33,35 @@ export const getCategoryHandler = function (schema, request) {
   try {
     const category = schema.categories.findBy({ _id: categoryId }).attrs;
     return new Response(200, {}, { category });
+  } catch (error) {
+    return new Response(
+      500,
+      {},
+      {
+        error,
+      }
+    );
+  }
+};
+/**
+ * This handler handles gets all categories in the db.
+ * send GET Request at /api/categories/:categoryName
+ * */
+
+export const getCategoriesVideoHandler = function (schema, request) {
+  const {categoryName} = request.params;
+  try {
+    const videos = [...this.db.videos].filter(item => item.categoryName === categoryName)
+    if(videos.length === 0){
+      return new Response(
+        404,
+        {},
+        {
+          error: "internal server error",
+        }
+      );
+    }
+    return new Response(200, {}, { videos: videos });
   } catch (error) {
     return new Response(
       500,

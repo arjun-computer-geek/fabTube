@@ -1,3 +1,6 @@
+export { ConditionalPageRenderer } from "./conditionalPageRendere/ConditionalPageRenderer";
+export { SuggestionVideoCardExplore } from "./cards/SuggestionVideoCardExplore";
+export { TextCard } from "./cards/TextCard";
 export { ProtectedRoute } from "./route/ProtectedRoute";
 export { Player } from "./player/Player";
 export { SuggestionVideoCard } from "./cards/SuggestionVideoCard";

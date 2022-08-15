@@ -18,6 +18,9 @@ import {
   ALL_CATEGORY_FAIL,
   ALL_CATEGORY_REQUEST,
   ALL_CATEGORY_SUCCESS,
+  CATEGORIES_VIDEOS_FAIL,
+  CATEGORIES_VIDEOS_REQUEST,
+  CATEGORIES_VIDEOS_SUCCESS,
 } from "constants/categoryConstants";
 
 const videoContext = createContext();
@@ -33,6 +36,7 @@ const VideoProvider = ({ children }) => {
   const [categoryState, categoryDispatch] = useReducer(categoryReducer, {
     loading: false,
     categories: [],
+    categoriesVideos: []
   });
 
   //   runnig fetch video on effect
@@ -59,6 +63,22 @@ const VideoProvider = ({ children }) => {
       });
     }
   };
+
+  const fetchCategoriesVideo = async (category = "Trending") => {
+    try {
+      categoryDispatch({ type: CATEGORIES_VIDEOS_REQUEST })
+      const { data } = await axios(`/api/categories/${category}`)
+      categoryDispatch({
+        type: CATEGORIES_VIDEOS_SUCCESS,
+        payload: data.videos
+      })
+    } catch (err) {
+      categoryDispatch({
+        type: CATEGORIES_VIDEOS_FAIL,
+        payload: err.response.data.error
+      })
+    }
+  }
 
   const fetchVideos = async () => {
     try {
@@ -99,7 +119,7 @@ const VideoProvider = ({ children }) => {
   };
   return (
     <videoContext.Provider
-      value={{ videoState, categoryState, filterByCategoryName }}
+      value={{ videoState, categoryState, filterByCategoryName, fetchCategoriesVideo }}
     >
       {children}
     </videoContext.Provider>
