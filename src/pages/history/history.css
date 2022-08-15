@@ -1,0 +1,26 @@
+.no-history-container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-inverse);
+    gap: 0.5rem;
+}
+
+.history-header{
+    display: flex;
+    color: var(--primary-inverse);
+    justify-content: space-between;
+    padding: 2rem;
+}
+.clear-btn{
+    background-color: var(--danger) !important;
+}
+.history-video-container{
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+

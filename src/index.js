@@ -5,6 +5,7 @@ import { makeServer } from "./server";
 import "./index.css";
 import { VideoProvider } from "contexts/videoContex";
 import { UserProvider } from "contexts/userContext";
+import { HistoryProvider } from "contexts/historyContex";
 
 // Call make Server
 makeServer();
@@ -14,7 +15,9 @@ root.render(
   <React.StrictMode>
     <UserProvider>
       <VideoProvider>
-        <App />
+        <HistoryProvider>
+          <App />
+        </HistoryProvider>
       </VideoProvider>
     </UserProvider>
   </React.StrictMode>

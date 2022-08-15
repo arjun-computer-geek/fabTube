@@ -22,7 +22,7 @@ export const Sidebar = () => {
           <VideoLibraryIcon className="sidebar-bar-icon" />
           <span className="sidebar-bar-caption">Library</span>
         </Link>
-        <Link className="sidebar-bar" to="#">
+        <Link className="sidebar-bar" to="/feed/history">
           <HistoryIcon className="sidebar-bar-icon" />
           <span className="sidebar-bar-caption">History</span>
         </Link>
