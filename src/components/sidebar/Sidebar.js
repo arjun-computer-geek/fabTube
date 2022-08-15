@@ -26,7 +26,7 @@ export const Sidebar = () => {
           <HistoryIcon className="sidebar-bar-icon" />
           <span className="sidebar-bar-caption">History</span>
         </Link>
-        <Link className="sidebar-bar" to="#">
+        <Link className="sidebar-bar" to="/feed/watch-later">
           <WatchLaterIcon className="sidebar-bar-icon" />
           <span className="sidebar-bar-caption">Watch later</span>
         </Link>
