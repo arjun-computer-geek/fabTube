@@ -11,6 +11,7 @@ import WatchLaterIcon from "@mui/icons-material/WatchLaterOutlined";
 import LikeIcon from "@mui/icons-material/ThumbUpAltOutlined";
 import LoginIcon from '@mui/icons-material/Login';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 export { Menu } from "@mui/icons-material";
 export {
@@ -26,5 +27,6 @@ export {
     WatchLaterIcon,
     LikeIcon,
     LoginIcon,
-    LockOutlinedIcon
+    LockOutlinedIcon,
+    DeleteIcon
 };

@@ -25,8 +25,17 @@ const HistoryProvider = ({ children }) => {
             
         }
     }
+    const deleteHistory = async (videoId, token) =>{
+        try{
+            historyDispatch({type: HISTORY_VIDEOS_REQUEST})
+            const {data}= await axios.delete(`/api/user/history/${videoId}`,  {headers:{authorization: token}})
+            historyDispatch({type: HISTORY_VIDEOS_SUCCESS, payload: data.history})
+        } catch (error) {
+            console.log({error})
+        }
+    }
     return (
-        <historyContext.Provider value={{historyState, addVideoToHistory}}>
+        <historyContext.Provider value={{historyState, addVideoToHistory, deleteHistory}}>
             {children}
         </historyContext.Provider>
     );
