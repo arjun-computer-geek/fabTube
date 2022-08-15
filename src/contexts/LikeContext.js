@@ -22,7 +22,7 @@ const LikeProvider = ({ children }) => {
             likeDispatch({ type: LIKE_VIDEOS_SUCCESS, payload: data.likes })
             toast.success("Like added")
         } catch (error) {
-            toast.error("something went wrong...")
+            toast.error("Video Already Added")
         }
     }
 
