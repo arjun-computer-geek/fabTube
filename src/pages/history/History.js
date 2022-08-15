@@ -12,7 +12,7 @@ export const History = () => {
     return (<>
 
         {!user ? <div className='no-history-container'>
-            <HistoryIcon />
+            <HistoryIcon sx={{fontSize: "5rem"}} />
             <h3>Keep track of what you watch</h3>
             <p>Watch history isn't viewable when signed out.</p>
             <Button
