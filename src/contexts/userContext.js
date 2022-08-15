@@ -1,11 +1,9 @@
-import { createContext, useContext, useEffect, useReducer } from "react";
+import { createContext, useContext, useReducer } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-
 import { userReducer } from "reducers";
 import { CLEAR_ERRORS, LOGIN_FAIL, LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT_FAIL, LOGOUT_SUCCESS, REGISTER_USER_REQUEST, REGISTER_USER_SUCCESS } from "constants/userConstants";
-import { useNavigate } from "react-router-dom";
 
 const userContext = createContext();
 const useUser = () => useContext(userContext);
@@ -17,7 +15,11 @@ const UserProvider = ({ children }) => {
     user: localStorage.getItem("user")
       ? JSON.parse(localStorage.getItem("user"))
       : null,
-    error: null
+    token: localStorage.getItem("token")
+      ? JSON.parse(localStorage.getItem("token"))
+      : null,
+    error: null,
+
   });
 
 
@@ -28,8 +30,8 @@ const UserProvider = ({ children }) => {
 
       const { data } = await axios.post("/api/auth/login", userData)
 
-      userDispatch({ type: LOGIN_SUCCESS, payload: data.foundUser })
-      console.log(isChecked)
+      userDispatch({ type: LOGIN_SUCCESS, payload: { user: data.foundUser, token: data.encodedToken } })
+
       if (isChecked) {
         localStorage.setItem("user", JSON.stringify({ _id: data.foundUser._id, firstName: data.foundUser.firstName, lastName: data.foundUser.lastName, email: data.foundUser.email }))
         localStorage.setItem('token', JSON.stringify(data.encodedToken))
@@ -39,17 +41,19 @@ const UserProvider = ({ children }) => {
       userDispatch({ type: LOGIN_FAIL, payload: error.response.data.errors[0] })
     }
   }
+
   const register = async (userData) => {
     try {
       userDispatch({ type: REGISTER_USER_REQUEST })
 
       const { data } = await axios.post("/api/auth/signup", userData)
-      userDispatch({ type: REGISTER_USER_SUCCESS, payload: data.createdUser })
+      userDispatch({ type: REGISTER_USER_SUCCESS, payload: { user: data.createdUser, token: data.encodedToken } })
+
       localStorage.setItem("user", JSON.stringify({ _id: data.createdUser._id, firstName: data.createdUser.firstName, lastName: data.createdUser.lastName, email: data.createdUser.email }))
       localStorage.setItem('token', JSON.stringify(data.encodedToken))
 
     } catch (error) {
-      userDispatch({type: LOGIN_FAIL, payload: error.response.data.errors[0]})
+      userDispatch({ type: LOGIN_FAIL, payload: error.response.data.errors[0] })
       console.log(error.response.data)
     }
   }
