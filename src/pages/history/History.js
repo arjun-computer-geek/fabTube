@@ -11,7 +11,7 @@ export const History = () => {
     const { userState: { user, token } } = useUser()
     return (<>
 
-        {!user ? <div className='no-history-container'>
+        {!user ? <div className='no-data-container'>
             <HistoryIcon sx={{fontSize: "5rem"}} />
             <h3>Keep track of what you watch</h3>
             <p>Watch history isn't viewable when signed out.</p>
@@ -23,7 +23,7 @@ export const History = () => {
                 SIGN IN
             </Button>
         </div> : <>
-            {historyVideos.length <= 0 ? <div className="no-history-container"><h2>There is no history</h2></div> : <>
+            {historyVideos.length <= 0 ? <div className="no-data-container"><h2>There is no history</h2></div> : <>
 
                 <div className='history-header'>
                     <h2>History ({historyVideos.length})</h2>
