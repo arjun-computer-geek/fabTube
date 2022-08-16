@@ -1,4 +1,4 @@
-import { Explore, ExploreDetails, History, Like } from 'pages'
+import { Explore, ExploreDetails, History, Like, WatchLater } from 'pages'
 import React from 'react'
 import { useParams } from 'react-router-dom'
 
@@ -18,6 +18,12 @@ export const ConditionalPageRenderer = () => {
     if(url === "liked"){
         return (
             <Like />
+        )
+    }
+
+    if(url === "watch-later"){
+        return (
+            <WatchLater />
         )
     }
 

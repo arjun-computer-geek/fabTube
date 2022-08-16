@@ -4,20 +4,25 @@ import { useVideos } from "contexts/videoContex";
 import { Button } from 'components/muiComponents';
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { DeleteIcon, DislikeIcon, LibraryIcon, LikeIcon, LikeIconAlt, ShareIcon, ThumbDownIcon } from "assets/muiIcons";
+import { LibraryIcon, LikeIcon, LikeIconAlt, ShareIcon, WatchLaterIcon, WatchLaterIconAlt } from "assets/muiIcons";
 import { useLike } from "contexts/LikeContext";
+import { useWatchLater } from "contexts/watchaLaterContext";
 
 export const Player = () => {
   const [isLiked, setIsLiked] = useState(false)
-  const { videoId } = useParams();
-  const {
-    videoState: { videos },
-  } = useVideos();
-  const { addVideoToHistory } = useHistory()
-  const isVideoExist = videos.find((ele) => ele._id === videoId);
+  const [iswatchLater, setIsWatchLater] = useState(false)
+
   const navigate = useNavigate()
+  const { videoId } = useParams();
+
+  const { addVideoToHistory } = useHistory()
+  const { videoState: { videos } } = useVideos();
   const { userState: { user, token } } = useUser()
   const { addLikedVideo, deleteLikedVideo } = useLike()
+  const { addToWatchLater, removeFromWatchLater } = useWatchLater()
+
+  const isVideoExist = videos.find((ele) => ele._id === videoId);
+
   useEffect(() => {
     if (!isVideoExist) {
       navigate('/')
@@ -29,6 +34,15 @@ export const Player = () => {
       addVideoToHistory(isVideoExist, token)
   }, [])
 
+  const addtoWatchLaterHandler = () => {
+    setIsWatchLater(true)
+    addToWatchLater(isVideoExist, token)
+  }
+
+  const removeFromWatchLaterHandler = () => {
+    setIsWatchLater(false)
+    removeFromWatchLater(videoId, token)
+  }
   const likeHandler = () => {
     setIsLiked(true)
     addLikedVideo(isVideoExist, token)
@@ -38,6 +52,7 @@ export const Player = () => {
     setIsLiked(false)
     deleteLikedVideo(videoId, token)
   }
+  console.log(iswatchLater)
   return (
     <>
       <iframe
@@ -76,7 +91,30 @@ export const Player = () => {
                 onClick={likeHandler}
               >
                 LIKE
-              </Button>}
+              </Button>
+          }
+
+          {
+            iswatchLater ?
+              <Button
+                variant="text"
+                startIcon={<WatchLaterIconAlt sx={{ color: "white" }} />}
+                sx={{ color: "white", marginLeft: "1rem" }}
+                onClick={removeFromWatchLaterHandler}
+              >
+                WATCH LATER
+              </Button>
+              :
+              <Button
+                variant="text"
+                startIcon={<WatchLaterIcon sx={{ color: "white" }} />}
+                sx={{ color: "white", marginLeft: "1rem" }}
+                onClick={addtoWatchLaterHandler}
+              >
+                WATCH LATER
+              </Button>
+          }
+
 
           <Button
             variant="text"

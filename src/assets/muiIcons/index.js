@@ -17,6 +17,7 @@ import DislikeIconAlt from '@mui/icons-material/ThumbDownOffAlt';
 import LikeIconAlt from '@mui/icons-material/ThumbUpAlt';
 import ShareIcon from '@mui/icons-material/Share';
 import LibraryIcon from '@mui/icons-material/LibraryBooks';
+import WatchLaterIconAlt from '@mui/icons-material/WatchLater';
 export { Menu } from "@mui/icons-material";
 export {
     ArrowBackIosIcon,
@@ -37,5 +38,6 @@ export {
     DislikeIcon,
     DislikeIconAlt,
     ShareIcon,
-    LibraryIcon
+    LibraryIcon,
+    WatchLaterIconAlt
 };

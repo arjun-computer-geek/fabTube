@@ -7,6 +7,7 @@ import { VideoProvider } from "contexts/videoContex";
 import { UserProvider } from "contexts/userContext";
 import { HistoryProvider } from "contexts/historyContex";
 import { LikeProvider } from "contexts/LikeContext";
+import { WatchLaterProvider } from "contexts/watchaLaterContext";
 
 // Call make Server
 makeServer();
@@ -18,7 +19,9 @@ root.render(
       <VideoProvider>
         <LikeProvider>
           <HistoryProvider>
-            <App />
+            <WatchLaterProvider>
+              <App />
+            </WatchLaterProvider>
           </HistoryProvider>
         </LikeProvider>
       </VideoProvider>
