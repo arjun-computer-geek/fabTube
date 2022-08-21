@@ -18,7 +18,7 @@ export const Sidebar = () => {
         </Link>
       </div>
       <div className="sidebar-section">
-        <Link className="sidebar-bar" to="#">
+        <Link className="sidebar-bar" to="/feed/library">
           <VideoLibraryIcon className="sidebar-bar-icon" />
           <span className="sidebar-bar-caption">Library</span>
         </Link>
