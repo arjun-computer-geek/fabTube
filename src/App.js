@@ -4,6 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ConditionalPageRenderer, Header, Player, ProtectedRoute } from "components";
 import { Explore, Feed, Home, Login, Profile, Signup, VideoDetailsPage } from "pages";
+import LibraryModal from "components/modal/LibraryModal";
 
 const App = () => {
   return (<>
@@ -19,6 +20,7 @@ const App = () => {
     />
     <Router>
       <Header />
+      <LibraryModal />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />

@@ -7,6 +7,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { LibraryIcon, LikeIcon, LikeIconAlt, ShareIcon, WatchLaterIcon, WatchLaterIconAlt } from "assets/muiIcons";
 import { useLike } from "contexts/LikeContext";
 import { useWatchLater } from "contexts/watchaLaterContext";
+import { useLibrary } from "contexts/LibraryContext";
 
 export const Player = () => {
   const [isLiked, setIsLiked] = useState(false)
@@ -20,6 +21,7 @@ export const Player = () => {
   const { userState: { user, token } } = useUser()
   const { addLikedVideo, deleteLikedVideo } = useLike()
   const { addToWatchLater, removeFromWatchLater } = useWatchLater()
+  const { handleClickModalOpen, } = useLibrary()
 
   const isVideoExist = videos.find((ele) => ele._id === videoId);
 
@@ -125,7 +127,9 @@ export const Player = () => {
           <Button
             variant="text"
             startIcon={<LibraryIcon sx={{ color: "white" }} />}
-            sx={{ color: "white", marginLeft: "1rem" }}>
+            sx={{ color: "white", marginLeft: "1rem" }}
+            onClick={handleClickModalOpen}
+          >
             SAVE
           </Button>
         </div>
