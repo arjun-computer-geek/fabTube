@@ -8,6 +8,7 @@ import { LibraryIcon, LikeIcon, LikeIconAlt, ShareIcon, WatchLaterIcon, WatchLat
 import { useLike } from "contexts/LikeContext";
 import { useWatchLater } from "contexts/watchaLaterContext";
 import { useLibrary } from "contexts/LibraryContext";
+import LibraryModal from "components/modal/LibraryModal";
 
 export const Player = () => {
   const [isLiked, setIsLiked] = useState(false)
@@ -54,9 +55,9 @@ export const Player = () => {
     setIsLiked(false)
     deleteLikedVideo(videoId, token)
   }
-  console.log(iswatchLater)
   return (
     <>
+    <LibraryModal video={isVideoExist}/>
       <iframe
         width="853"
         height="480"
