@@ -8,9 +8,17 @@ import { UserProvider } from "contexts/userContext";
 import { HistoryProvider } from "contexts/historyContex";
 import { LikeProvider } from "contexts/LikeContext";
 import { WatchLaterProvider } from "contexts/watchaLaterContext";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { LibraryProvier } from "contexts/LibraryContext";
 
 // Call make Server
 makeServer();
+
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -20,7 +28,11 @@ root.render(
         <LikeProvider>
           <HistoryProvider>
             <WatchLaterProvider>
+              <LibraryProvier>
+            <ThemeProvider theme={darkTheme}>
               <App />
+              </ThemeProvider>
+              </LibraryProvier>
             </WatchLaterProvider>
           </HistoryProvider>
         </LikeProvider>

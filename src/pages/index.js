@@ -1,3 +1,4 @@
+export { Library } from './library/Library'
 export { WatchLater } from './watchLater/WatchLater'
 export { Like } from './like/Like'
 export { History } from './history/History'
