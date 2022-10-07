@@ -3,8 +3,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ConditionalPageRenderer, Header, Player, ProtectedRoute } from "components";
-import { Explore, Feed, Home, Login, Profile, Signup, VideoDetailsPage } from "pages";
-import LibraryModal from "components/modal/LibraryModal";
+import {  Feed, Home, Login, Profile, Signup, VideoDetailsPage } from "pages";
 
 const App = () => {
   return (<>
@@ -20,12 +19,11 @@ const App = () => {
     />
     <Router>
       <Header />
-      <LibraryModal />
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        {/* <Route path="/explore" element={<Explore />} /> */}
         <Route element={<ProtectedRoute />} >
           <Route path="/profile" element={<Profile />} />
         </Route>
